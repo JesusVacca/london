@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color:#001131;
+    --color-main: #001C30;
+    --color-secundario :#00153e;
+    --color-titulo-main: #dddddd;
+}
+.contenedor{
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-main);
+}
+header{
+    width: 100%;
+    height: 504px;
+    background-image: url(../img/fondo.jpg);
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+header a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.753);
+    font-size: 25px;
+    margin: 0 1em 0 0;
+    font-family: 'Times New Roman', Times, serif;
+    min-width: 100px;
+    text-shadow: 3px 1px 1px black;
+    transition: all .2s ease-in-out;
+}
+header a:hover{
+    color: white; 
+}
+header .titulo{
+    color: var(--color-titulo-main);
+    text-shadow: 3px 1px 1px black;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 1em;
+}
+header .titulo span{
+    display: block;
+    text-align: center;
+    font-family: monospace;
+    font-size: 100px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    width: 7ch;
+    border-right: 4px solid;
+    animation: maquina-escribir 3s steps(9),blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+/* Estilos de la ventana modal */
+.modal{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffffad;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+.modal .modal-contenido{
+    width: 50%;
+    height: 50%;
+    background:#fff;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
+    overflow: hidden;
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+.modal-contenido h1{
+    text-align: center;
+    padding: 0 0 1em 0;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    color:white;
+    text-shadow: 3px 1px 1px black;
+
+}
+.modal-contenido p{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    font-family: monospace;
+    text-shadow: 3px 1px 1px black;
+}
+/* Fin de los estilos de la ventana modal */
+/* Estilos de las secciones */
+.section-main{
+    width: 100%;
+    overflow: hidden;
+    background: var(--color-secundario);
+}
+.section-main .section-hija{
+    width: 100%;
+    overflow: inherit;
+}
+.section-hija .section-catalogo{
+    width: 100%;
+    background: var(--color-secundario);
+    display: flex;
+    position: relative;
+}
+.section-catalogo .barra-sub-menu{
+    width: 15%;
+    overflow: hidden;
+    border-right: 1px solid #fff;
+}
+.barra-sub-menu .enlaces-catalogo{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: monospace;
+    padding-left: 20%;
+    color: #fff;
+}
+.barra-sub-menu .enlaces-catalogo.activo{color: rgba(212, 9, 9, 0.884);}
+/* Fin de los estilos de las secciones */
+
+/* Estilos de la seccion de vista */
+.section-catalogo .catalogo-item{
+    width: 83%;
+    background-color:var(--color-secundario);
+    column-count: 4;
+    display: none;
+
+}
+.section-catalogo .catalogo-item.activo{
+    display: block;
+    transition: all .5s ease-in-out;
+}
+.contenido-catalogo{
+    width: 300px;
+    height: 300px;
+    background-color: #ffffffcb;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(.7);
+    overflow: hidden;
+    
+}
+.contenido-catalogo:hover{
+    box-shadow: 2px 2px 2px black; 
+    transition: all .4s ease-in-out;
+    transform: scale(.8);
+    z-index: 1;
+}
+.contenido-catalogo .titulo{
+    font-size: 25px;
+    font-family: monospace;
+}
+.contenido-catalogo .btn-comprar{
+    width: 90%;
+    height: 30px;
+    color: white;
+    border: none;
+    background-color: #001C30;
+    border-radius: 5px;
+    margin: 2px 0 0 0;
+    cursor: pointer;
+}
+.contenido-catalogo .btn-comprar:hover{opacity: .9;}
+.contenido-catalogo .precio{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contenido-catalogo .img-item{
+    width: 100%;
+    height: 200px;
+    object-fit:fill;
+}
+/* Fin de la secion de vista */
+/* Seccion de contacto */
+.contacto{
+    background: var(--color-secundario);
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+    margin: .2em 0 0 0;
+    border-top: 1px solid #fff;
+}
+.contacto .titulo{
+    width: 100%;
+    height: 50px;
+    margin: 0 0 1em 0;
+}
+.contacto h1{
+    text-align: center;
+    font-family: monospace;
+    color: white;
+    font-size: 30px;
+}
+.contacto .contacto-contenedor{
+    width: 100%;
+    display: flex;
+}
+.ubicacion{
+    width: 50%;
+    height: 500px;
+    overflow: hidden;
+}
+.ubicacion iframe{
+    width: 100%;
+    height: 100%;
+}
+.contacto-items{
+    width: 50%;
+    height: 500px;
+    overflow: hidden;
+}
+.contacto-items .formulario-contacto{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario-contacto input[type=text]{
+    width: 70%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin: .5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 1em;
+    outline: none;
+}
+.formulario-contacto textarea{
+    width: 70%;
+    height: 30%;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.formulario-contacto input[type=submit]{
+    width: 50%;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background: red;
+    margin: 1em 0 0 0;
+    cursor: pointer;
+}
+.formulario-contacto input[type=submit]:hover{opacity: .8;}
+/*Fin de la seccion de contacto */
+/* Estilos del pie de pagina */
+footer{
+    width: 100%;
+    height: 400px;
+    background: var(--color);
+}
+/* Fin de los estilos del pie de pagina */
+
+/* Animaciones del titulo */
+@keyframes maquina-escribir {
+    from{width: 0ch;}
+    to{width: 7ch;}
+}
+@keyframes blink {
+    50%{border-color: transparent;}
+}
